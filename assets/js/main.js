@@ -86,7 +86,7 @@
               $(this).find('.minutes').text(event.offset.minutes);
               $(this).find('.seconds').text(event.offset.seconds);
             });
-          });
+        });
 
         // projects filters isotop
         $(".product-filters li").on('click', function () {
