@@ -77,26 +77,16 @@
 
         // count down
         $(document).ready(function() {
-            // Cek apakah sudah ada tanggal tersimpan
-            var targetDateStr = localStorage.getItem("targetCountdownDate");
-
-            if (!targetDateStr) {
-            // Hitung 2 bulan dari sekarang
-            var now = new Date();
-            var targetDate = new Date(now.setMonth(now.getMonth() + 2));
-            targetDateStr = targetDate.toISOString(); // simpan dalam format ISO
-            localStorage.setItem("targetCountdownDate", targetDateStr);
-            }
-
-            var finalDate = new Date(targetDateStr);
-
+            // Tetapkan waktu global yang sama untuk semua device
+            var finalDate = new Date("2025-07-14T00:00:00");
+        
             $("#custom-countdown").countdown(finalDate, function(event) {
-            $(this).find('.days').text(event.offset.totalDays);
-            $(this).find('.hours').text(event.offset.hours);
-            $(this).find('.minutes').text(event.offset.minutes);
-            $(this).find('.seconds').text(event.offset.seconds);
+              $(this).find('.days').text(event.offset.totalDays);
+              $(this).find('.hours').text(event.offset.hours);
+              $(this).find('.minutes').text(event.offset.minutes);
+              $(this).find('.seconds').text(event.offset.seconds);
             });
-        });
+          });
 
         // projects filters isotop
         $(".product-filters li").on('click', function () {
